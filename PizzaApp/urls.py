@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home,adminloginview,adminhome,adminauth,adminlogout,addPizza
+from .views import home,adminloginview,adminhome,adminauth,adminlogout,addPizza,deletePizza
 
 urlpatterns = [
     path('', home,name="homepage"),
@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/authenticate/',adminauth),
     path('admin/home',adminhome,name="adminhomepage"),
     path('adminlogout/',adminlogout,name="adminlogout"),
-    path('addpizza/',addPizza,name="addPizza")
+    path('addpizza/',addPizza,name="addPizza"),
+    path('deletepizza/<int:pizza_id>',deletePizza,name="deletePizza"),
+    
 ]

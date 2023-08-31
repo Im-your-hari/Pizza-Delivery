@@ -31,15 +31,23 @@
     <div class="container">
         <table class="table table-warning ">
             <tr class="table-warning  text-center">
-                <th class="table-warning">Pizza</th>
-                <th class="table-warning">Price</th>
-                <th class="table-warning">Description</th>
+                <th class="table-warning">PIZZA</th>
+                <th class="table-warning">PRICE</th>
+                <th class="table-warning">DESCRIPTION</th>
+                <th class="table-warning">#</th>
+                <th class="table-warning">#</th>
             </tr>
             {% for i in pizza reversed %}
                 <tr class="table-warning">
-                    <td class="table-warning  text-center">{{i.name}}</td>
+                    <td class="table-warning  text-center fw-bold">{{i.name}}</td>
                     <td class="table-warning  text-center">{{i.price}}</td>
                     <td class="table-warning">{{i.description}}</td>
+                    <td class="table-warning">
+                        <a href="#" class="btn btn-outline-dark">EDIT</a>
+                    </td>
+                    <td class="table-warning">
+                        <a href="/deletepizza/{{i.id}}" class="btn btn-outline-danger">DELETE</a>
+                    </td>
                 </tr>
             {% endfor %}
         </table>

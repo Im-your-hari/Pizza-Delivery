@@ -41,3 +41,7 @@ def addPizza(request):
 
     PizzaModel(name=pizzaname,price=pizzaprice,description=pizzadescribe).save()
     return redirect('adminhomepage')
+
+def deletePizza(request,pizza_id):
+    PizzaModel.objects.filter(id=pizza_id).delete()
+    return redirect('adminhomepage')
