@@ -13,12 +13,37 @@
             <p style="text-align:center;">{{message}}</p>
         </div>
     {% endfor %}
-
-    <div class="container mt-3 p-2" style="width:300px;display:block;margin:auto;" >
-        <input type="text" class="form-control" style="display:inline;width:200px;" id="pizzaname" name="pizza-name" placeholder="Margherita Pizza">
     
-        <input type="submit"  style="display:inline;" class="btn btn-success" value="ADD">
+    
+    <form action="/addpizza/" method="post">
+    {% csrf_token %}
+        <div class="container mt-3 p-2" style="width:220px;display:block;margin:auto;" >
+            <input type="text" class="form-control mb-3" style="display:;width:200px;" id="pizzaname" name="pizza-name" placeholder="Margherita Pizza">
+            <input type="text" class="form-control mb-3" style="display:;width:200px;" id="pizzaprice" name="pizza-price" placeholder="₹109">
+            <textarea class="form-control mb-3" rows="6" style="display:;width:200px;" id="pizzadescribe" name="pizza-describe" placeholder="Classic delight with 100% real mozzarella cheese. Available in Cheese Burst, Wheat Thin Crust and Pan Crust options..."></textarea>
+        
+            <input type="reset"  style="display:;" class="btn btn-dark" value="RESET">
+            <input type="submit"  style="display:;" class="btn btn-success" value="ADD">
+        </div>
+    </form>
+    <hr>
+
+    <div class="container">
+        <table class="table table-warning ">
+            <tr class="table-warning  text-center">
+                <th class="table-warning">Pizza</th>
+                <th class="table-warning">Price</th>
+                <th class="table-warning">Description</th>
+            </tr>
+            {% for i in pizza reversed %}
+                <tr class="table-warning">
+                    <td class="table-warning  text-center">{{i.name}}</td>
+                    <td class="table-warning  text-center">{{i.price}}</td>
+                    <td class="table-warning">{{i.description}}</td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
-</form>
-    </div>
+    
+    
 {% endblock %}
