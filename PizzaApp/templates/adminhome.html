@@ -1,8 +1,24 @@
 {% extends "base.html" %}
+
+{% block navend %}
+        
+        <a class="btn btn-outline-warning" href="/adminlogout/">Logout</a>
+{% endblock %}
+
+
 {% block content %}
+    
     {% for message in messages %}
-        <div class="text-success" role="alert">
+        <div class="text-success" role="alert" >
             <p style="text-align:center;">{{message}}</p>
         </div>
     {% endfor %}
+
+    <div class="container mt-3 p-2" style="width:300px;display:block;margin:auto;" >
+        <input type="text" class="form-control" style="display:inline;width:200px;" id="pizzaname" name="pizza-name" placeholder="Margherita Pizza">
+    
+        <input type="submit"  style="display:inline;" class="btn btn-success" value="ADD">
+    </div>
+</form>
+    </div>
 {% endblock %}
