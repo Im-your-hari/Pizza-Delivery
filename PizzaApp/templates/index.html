@@ -1,1 +1,43 @@
 {% extends 'base.html' %}
+
+{% block navend %}
+        
+    <a class="btn btn-outline-warning" href="#">Logout</a>
+{% endblock %}
+
+
+{% block content %}
+    <!--div class="container">
+        <table class="table table-warning ">
+            <tr class="table-warning  text-center">
+                <th class="table-warning">PIZZA</th>
+                <th class="table-warning">PRICE</th>
+                <th class="table-warning">DESCRIPTION</th>
+            </tr>
+            {% for i in pizza reversed %}
+                <tr class="table-secondary">
+                    <td class="table-secondary  text-center fw-bold">{{i.name}}</td>
+                    <td class="table-secondary  text-center">{{i.price}}</td>
+                    <td class="table-secondary">{{i.description}}</td>
+                    
+                </tr>
+            {% endfor %}
+        </table>
+    </div-->
+    <div class="container-fluid" style="position :relative;">
+        <div style="position:absolute;width:500px;height:300px;background-color:orange;right:30px; border-radius:20px;" class="container mt-5 shadow-lg" >
+            <form class="m-3">
+                <h1 class="text-orange fw-bold text-center" style="color:orange;-webkit-text-stroke:1px gray;">Sign Up</h1>
+                <input type="text" class="form-control mt-3 shadow-sm" placeholder="Username">
+                <input type="password" class="form-control mt-3 shadow-sm" placeholder="Password">
+                <input type="phone" class="form-control mt-3 shadow-sm" placeholder="Phone">
+                <input type="submit" value="Sign Up" style="display:block;margin:auto;" class="btn btn-success mt-3 shadow-sm" placeholder="">
+            
+            </form>
+        
+        </div>
+
+    </div>
+
+
+{% endblock %}

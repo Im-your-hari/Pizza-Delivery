@@ -5,7 +5,8 @@ from .models import PizzaModel
 
 # Create your views here.
 def home(request):
-    return render(request,'index.html')
+    context = {'pizza' : PizzaModel.objects.all()}
+    return render(request,'index.html',context)
 
 def adminloginview(request):
     return render(request,'admin.html')
