@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}   
 
 {% block navend %}
         
@@ -24,8 +25,9 @@
             {% endfor %}
         </table>
     </div-->
+    {% load static %} 
     <div class="container-fluid" style="position :relative;">
-        <div style="position:absolute;width:500px;height:300px;background-color:orange;right:30px; border-radius:20px;" class="container mt-5 shadow-lg" >
+        <div style="background-color: transparent;position:absolute;width:500px;height:300px;right:30px; border-radius:20px;" class="container mt-5 shadow-lg" >
             <form class="m-3">
                 <h1 class="text-orange fw-bold text-center" style="color:orange;-webkit-text-stroke:1px gray;">Sign Up</h1>
                 <input type="text" class="form-control mt-3 shadow-sm" placeholder="Username">
@@ -38,6 +40,6 @@
         </div>
 
     </div>
-
+    <!--img src="{% static 'img/pizza_bg.jpg' %}"-->
 
 {% endblock %}
